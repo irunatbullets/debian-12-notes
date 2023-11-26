@@ -1,6 +1,6 @@
 # Debian 12 installation notes
 
-I am documenting the steps I took to get Debian installed the say I wanted it. There are a number of steps I had to take, and some of it is already forgotten, but as I remember things I'll add them to this document.
+I am documenting the steps I took to get Debian installed the way I wanted it. There are a number of steps I had to take, and some of it is already forgotten, but as I remember things I'll add them to this document.
 
 ## Which iso?
 
