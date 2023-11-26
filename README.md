@@ -90,6 +90,14 @@ cd /boot/efi/EFI/debian
 cp gubx64.efi grubx64.efi.bak
 echo -n -e \\x00 > patch && cat grubx64.efi | strings -t d | grep "Welcome to GRUB!" | awk '{print $1;}' | xargs -I{} dd if=patch of=grubx64.efi obs=1 conv=notrunc seek={}
 ```
+## Nvidia graphics
+
+I just followed an online guide to enable the non-free repositories and installed the nvidia drivers. Perhaps it was as simple as `sudo apt install nvidia-driver`, it's a bit hard to remember because Fedora 39 was quite a big hassle.
+
+## Extra command-line tools
+
+`sudo apt install neofetch` - Show distro and system information in the terminal.
+`sudo apt install htop` - A nicer version of top!
 
 
 
