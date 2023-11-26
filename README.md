@@ -2,7 +2,7 @@
 
 I am documenting the steps I took to get Debian installed the say I wanted it. There are a number of steps I had to take, and some of it is already forgotten, but as I remember things I'll add them to this document.
 
-## Which iso
+## Which iso?
 
 I actually installed Debian 12 several times over the last couple of days. Partly because I kept hopping between Fedora 39, and partially because Debian 12 installs **a lot** of weird language tools and games by default if you use the Debian 12 Gnome live iso - **so don't!**
 
