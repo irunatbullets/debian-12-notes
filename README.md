@@ -30,13 +30,24 @@ sudo update-grub
 
 Plymouth is the loading/splash screen. I didn't really like the default Debian 12 theme, so I found something that was simple and black. It's a cheesy mac inspired theme, but it's not bad.
 
-https://www.gnome-look.org/p/1888173
+[Debian - Mac OS Style Boot Splash](https://www.gnome-look.org/p/1888173)
 
-After downloading and extracting it, I ran `mv debian-logo /usr/share/plymouth/themes/`, followed by `sudo plymouth-set-default-theme -R debian-logo`.
+After downloading and extracting it, I ran
+```
+mv debian-logo /usr/share/plymouth/themes/
+```
+followed by 
+```
+sudo plymouth-set-default-theme -R debian-logo
+```
 
 I then had a pretty annoying problem where the Debian 12 logo shows as a watermark on my new theme, and there didn't seem to be a way to remove it.
 
-The solution that I found was to `mv /usr/share/desktop-base/debian-logos /usr/share/desktop-base/debian-logos.bak`. I don't know if this could cause an issue later because there are a lot of other logos in this folder, but **OH WELL**.
+The solution that I found was to
+```
+mv /usr/share/desktop-base/debian-logos /usr/share/desktop-base/debian-logos.bak
+```
+I don't know if this could cause an issue later because there are a lot of other logos in this folder, but **OH WELL**.
 
 ### Welcome to Grub
 
@@ -49,8 +60,6 @@ sudo su -
 cd /boot/efi/EFI/debian
 cp gubx64.efi grubx64.efi.bak
 echo -n -e \\x00 > patch && cat grubx64.efi | strings -t d | grep "Welcome to GRUB!" | awk '{print $1;}' | xargs -I{} dd if=patch of=grubx64.efi obs=1 conv=notrunc seek={}
-```
-
 ```
 
 
