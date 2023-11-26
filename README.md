@@ -2,6 +2,35 @@
 
 I am documenting the steps I took to get Debian installed the say I wanted it. There are a number of steps I had to take, and some of it is already forgotten, but as I remember things I'll add them to this document.
 
+## Which iso
+
+I actually installed Debian 12 several times over the last couple of days. Partly because I kept hopping between Fedora 39, and partially because Debian 12 installs **a lot** of weird language tools and games by default if you use the Debian 12 Gnome live iso - **so don't!**
+
+It is best to go to https://www.debian.org/ and hit the big Download button to get the netinst iso.
+
+Once I downloaded that, I just used Raspberry Pi imager to write it to an sd card/usb stick.
+
+The installer is pretty straight forward, but, once it got to the desktop environment section. I chose these options:
+
+```
+[*] Debian desktop environment
+[ ] ... GNOME
+[ ] ... Xfce
+[ ] ... etc, etc
+[*] Standard system utilities
+```
+To my surprise, this still installed GNOME, which I wanted, but it still installed a lot of games. Luckily, though, it didn't install all of the weird input methods! The games are easy to deal with.
+
+```
+sudo apt purge iagno lightsoff four-in-a-row gnome-robots pegsolitaire gnome-2048 hitori gnome-klotski gnome-mines gnome-mahjongg gnome-sudoku quadrapassel swell-foop gnome-tetravex gnome-taquin aisleriot gnome-chess five-or-more gnome-nibbles tali ; sudo apt autoremove
+```
+Apparently this also works, but I didn't try it.
+```
+apt purge --autoremove gnome-games
+```
+
+I also very carefully removed LibreOffice.
+
 ## Start up
 
 I wanted the computer to boot as cleanly into Debian 12 as I could.
