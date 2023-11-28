@@ -48,12 +48,18 @@ GRUB_HIDDEN_TIMEOUT_QUIET=true
 GRUB_TIMEOUT=0
 GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mce=off vt.global_cursor_default=0 loglevel=3"
-GRUB_CMDLINE_LINUX=""
+GRUB_CMDLINE_LINUX="nvidia-drm.modeset=1"
 ```
 After saving the file, run
 ```
 sudo update-grub
 ```
+and then
+```
+sudo ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
+```
+
+This last command, along with the `GRUB_CMDLINE_LINUX="nvidia-drm.modeset=1"` is for enabling Wayland.
 
 ### Plymouth
 
@@ -99,5 +105,7 @@ I just followed an online guide to enable the non-free repositories and installe
 `sudo apt install neofetch` - Show distro and system information in the terminal.
 `sudo apt install htop` - A nicer version of top!
 
+## Some good extensions
 
+https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/
 
