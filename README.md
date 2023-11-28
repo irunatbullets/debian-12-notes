@@ -104,6 +104,7 @@ I just followed an online guide to enable the non-free repositories and installe
 
 `sudo apt install neofetch` - Show distro and system information in the terminal.
 `sudo apt install htop` - A nicer version of top!
+`sudo apt install dconf-editor` - For removing extension settings in `/org/gnome/shell/extensions`
 
 ## Some good extensions
 
