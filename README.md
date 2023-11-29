@@ -110,3 +110,16 @@ I just followed an online guide to enable the non-free repositories and installe
 
 https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/
 
+## Installing Steam
+
+The easiest way to install Steam on Debian seems to be the following (do these one-by-one):
+
+```
+sudo dpkg --add-architecture i386
+sudo apt update && sudo apt upgrade
+sudo apt install steam-installer
+sudo apt purge *nvidia*:i386 ; sudo apt autoremove
+sudo apt install nvidia-driver-libs:i386
+
+```
+
